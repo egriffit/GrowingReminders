@@ -31,6 +31,7 @@ class MainActivity : ComponentActivity() {
                     {
                         Reminder("Test 1")
                         Reminder("Test 2")
+                        AddReminder()
                     }
                 }
             }
@@ -42,6 +43,13 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     GrowingRemindersTheme {
-        Reminder("Test")
+        Column(
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.padding(vertical = 12.dp),
+        ) {
+            Reminder("Test")
+            AddReminder()
+        }
     }
 }
